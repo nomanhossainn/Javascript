@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Inter a number: <input type="text" id="num"><br>
+    <button id="btn" onclick="prime()">Check Prime</button><br>
+    Result: <label id="lbl"></label>
+</body>
+<script>
+    function prime(){
+        let x = Number(document.getElementById('num').value);
+        let isPrime = true;
+        if(x==1){
+            document.getElementById('lbl').innerHTML = "1 is neither prime nor composite number.";
+        }
+        else if(x>1){
+            for(let i=2; i<=x/2; i++){ //20
+                if(x % i == 0){
+                    isPrime = false;
+                    break;
+                }
+            }
+            if(isPrime){
+                document.getElementById('lbl').innerText = x + " is a prime number.";
+            }
+            else{
+                document.getElementById('lbl').innerText = x + " is not a prime number.";
+            }
+        }
+    }
+</script>
+</html>

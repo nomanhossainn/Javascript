@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Enter an alphanumeric string: <input type="text" id="input">
+    <button id="lbl1" onclick="calculation()">Check</button><br>
+    Result: <label id="lbl2"></label>
+</body>
+<script>
+    function calculation(){
+        let input = document.getElementById('input').value;
+        input = input.toLowerCase();
+        let ispalindrome = true;
+        let len = input.length;
+
+        for(let i = 0; i < len/2; i++){
+            if(input[i] != input[len-1-i]){
+                ispalindrome = false;
+                break;
+            }
+        }
+        if(ispalindrome){
+            document.getElementById('lbl2').innerText = "Yes, It is a Palindrome."
+        }
+        else{
+            document.getElementById('lbl2').innerText = "No, It is not a Palindrome."
+        }
+    }
+</script>
+</html>

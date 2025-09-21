@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Height (cm): <input type="text" id="height"><br> <br>
+    Weight (lb): <input type="text" id="weight"><br>
+    <button onclick="calculation()">Calculation</button><br>
+    Calculation Result: <label id="lbl1"></label><br>
+    Satus: <label id="lbl2"></label>
+</body>
+<script>
+    function calculation(){
+        let cm = Number(document.getElementById('height').value);
+        let lb = Number(document.getElementById('weight').value);
+        //let result;
+        h = cm / 100;
+        w = lb / 2.2046;
+        let result = w / Math.pow(h,2);
+        document.getElementById('lbl1').innerText = result
+
+        if (result > 0 && result<20){
+            document.getElementById('lbl2').innerText = "bad"
+        }
+        else if(result > 20 && result < 30){
+            document.getElementById('lbl2').innerText = "Not Bad"
+        }
+        else if(result>30){
+            document.getElementById('lbl2').innerText = "Good"
+        }
+        
+    }
+</script>
+</html>

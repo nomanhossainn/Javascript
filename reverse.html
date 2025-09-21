@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Inter a number: <input type="text" id="num"><br><br>
+    <button id="lbl1" onclick="checkPalindrome('+')">Check Palindrome</button>
+    <button id="lbl2" onclick="checkPalindrome('-')">Reverse</button><br>
+    Result: <label id="result"></label>
+</body>
+<script>
+    function checkPalindrome(op){
+        let x = Number(document.getElementById('num').value);
+        let y = x;
+        let reverse = 0;
+
+        while(x != 0){
+            let temp = x % 10;
+            reverse = reverse * 10 + temp;
+            x = Math.floor(x/10);
+        }
+        if(op=='+'){
+            if(y == reverse){
+                document.getElementById('result').innerText = "Palindrome";
+            }
+            else{
+                document.getElementById('result').innerText = "Not Palindrome";
+            }
+        }
+        else if(op == '-'){
+            document.getElementById('result').innerText = reverse
+        }
+    }
+</script>
+</html>
